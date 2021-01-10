@@ -65,7 +65,7 @@ const vaccination = {
       $('#name').trim(),
       $('#email').trim(),
       $('#comment').trim(),
-      $('#vaccination_date').trim()
+      $('#vaccination_date').trim(),
     ).done(function(result) {
       // reload entries
       loadEntries();
