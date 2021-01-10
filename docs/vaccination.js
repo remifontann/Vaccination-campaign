@@ -22,7 +22,7 @@ const vaccination = {
         name,
         email,
         comment,
-        vaccination_date,
+        vaccination_date
       }),
       dataType: 'json',
     });
