@@ -12,7 +12,7 @@ function main(params) {
             name: params.name,
             email: params.email,
             comment: params.comment,
-            vaccination_date: params.date_de_vaccination,
+            vaccination_date: params.vaccination_date,
         }
     };
 }
