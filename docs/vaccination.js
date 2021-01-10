@@ -12,8 +12,8 @@ const vaccination = {
     });
   },
   // add a single entry
-  add(name, email, comment,createdAt) {
-    console.log('Sending', name, email, comment,createdAt)
+  add(name, email, comment,vaccination_date) {
+    console.log('Sending', name, email, comment,vaccination_date)
     return $.ajax({
       type: 'PUT',
       url: `${apiUrl}/entries`,
@@ -22,7 +22,7 @@ const vaccination = {
         name,
         email,
         comment,
-        createdAt,
+        vaccination_date,
       }),
       dataType: 'json',
     });
@@ -65,7 +65,7 @@ const vaccination = {
       $('#name').val().trim(),
       $('#email').val().trim(),
       $('#comment').val().trim(),
-      $('#createdAt').outerHTML.trim()
+      $('#vaccination_date').valueAsDate.trim()
     ).done(function(result) {
       // reload entries
       loadEntries();
