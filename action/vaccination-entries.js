@@ -11,7 +11,7 @@ function main(params) {
             email: row.doc.email,
             comment: row.doc.comment,
             createdAt: row.doc.createdAt,
-            vaccination_date: row.doc.date_de_vaccination,
+            vaccination_date: row.doc.vaccination_date,
             icon: (row.doc.email ? `https://secure.gravatar.com/avatar/${md5.hash(row.doc.email.trim().toLowerCase())}?s=64` : null)
         }})
     };

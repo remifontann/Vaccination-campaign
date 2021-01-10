@@ -1,9 +1,9 @@
 /**
  * Web application
  */
-const apiUrl = 'https://02297120.us-south.apigw.appdomain.cloud/vaccination';
-const guestbook = {
-  // retrieve the existing guestbook entries
+const apiUrl = 'https://06cdfa46.eu-de.apigw.appdomain.cloud/vaccination';
+const vaccination = {
+  // retrieve the existing vaccination entries
   get() {
     return $.ajax({
       type: 'GET',
@@ -11,7 +11,7 @@ const guestbook = {
       dataType: 'json'
     });
   },
-  // add a single guestbood entry
+  // add a single entry
   add(name, email, comment,vaccination_date) {
     console.log('Sending', name, email, comment,vaccination_date)
     return $.ajax({
@@ -41,7 +41,7 @@ const guestbook = {
   function loadEntries() {
     console.log('Loading entries...');
     $('#entries').html('Loading entries...');
-    guestbook.get().done(function(result) {
+    vaccination.get().done(function(result) {
       if (!result.entries) {
         return;
       }
@@ -56,12 +56,12 @@ const guestbook = {
     });
   }
 
-  // intercept the click on the submit button, add the guestbook entry and
+  // intercept the click on the submit button, add the vaccination entry and
   // reload entries on success
   $(document).on('submit', '#addEntry', function(e) {
     e.preventDefault();
 
-    guestbook.add(
+    vaccination.add(
       $('#name').val().trim(),
       $('#email').val().trim(),
       $('#comment').val().trim(),
