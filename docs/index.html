@@ -2,150 +2,143 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Public vaccination campaign - a serverless web application</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-  <style>
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      border: 1px solid #e7e7e7;
-      background-color: #f3f3f3;
-    }
-
-    li {
-      float: left;
-    }
-
-    li a {
-      display: block;
-      color: #666;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    li a:hover:not(.active) {
-      background-color: #ddd;
-    }
-
-    li a.active {
-      color: white;
-      background-color: #4CAF50;
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Public vaccination campaign - a serverless web application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e7e7e7;
+            background-color: #f3f3f3;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: #666;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #ddd;
+        }
+        li a.active {
+            color: white;
+            background-color: #e3f2fd;
+        }
+    </style>
 </head>
 
 <body>
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+    <li><a class="active" href="#home">IBM Cloud Project</a></li>
+    <li><a href="#form">Form</a></li>
+    <li><a href="#about">About us</a></li>
 </ul>
 <style>
-  body, html {
-    height: 100%;
-  }
-  .bg {
-    /* The image used */
-    background-image: url("https://cdn.futura-sciences.com/buildsv6/images/wide1920/8/8/4/884b2b4ee1_50161503_covid-19-deux-medecins-repondent-vos-questions-youtube.jpg");
-    /* Full height */
-    height: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    body, html {
+        height: 100%;
+    }
+    .bg {
+        /* The image used */
+        background-image: url("https://cdn.futura-sciences.com/buildsv6/images/wide1920/8/8/4/884b2b4ee1_50161503_covid-19-deux-medecins-repondent-vos-questions-youtube.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 </style>
 
 <div class="bg">
-  <section class="section">
-    <div class="container">
-      <h1 class="title is-3">
-        Vaccination campaign
-      </h1>
-      <p class="subtitle">
-        A serverless web application
-      </p>
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-3">
+                Vaccination campaign
+            </h1>
+            <p class="subtitle">
+                A serverless web application
+            </p>
 
-      <div class="columns">
-        <div class="column">
-          <h3 class="title is-3">
-            Messages from past visitors
-          </h3>
-          <div id="entries"></div>
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title is-3">
+                        Messages from past visitors
+                    </h3>
+                    <div id="entries"></div>
+                </div>
+                <div class="column">
+                    <h3 class="title is-3">
+                        Add your message
+                    </h3>
+                    <form id="addEntry">
+                        <div class="field">
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="your name" id="name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="your email" id="email">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Vaccination date</label>
+                            <div class="control">
+                                <input type="date" name="vaccination">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Comment about secondary effect of the vaccination</label>
+                            <div class="control">
+                                <textarea class="textarea" placeholder="your comment" id="comment"></textarea>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <button class="button is-primary">Send your message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="column">
-          <h3 class="title is-3">
-            Add your message
-          </h3>
-          <form id="addEntry">
-            <div class="field">
-              <label class="label">Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="your name" id="name">
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="your email" id="email">
-              </div>
-              </div>
-            <div class="field">
-              <label class="label">Vaccination date</label>
-              <div class="control">
-                <input type="date" name="vaccination">
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Comment about secondary effect of the vaccination</label>
-              <div class="control">
-                <textarea class="textarea" placeholder="your comment" id="comment"></textarea>
-              </div>
-            </div>
-            <div class="control">
-              <button class="button is-primary">Send your message</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
 </div>
 </body>
-  </section>
+</section>
 
-  <script id="entries-template" type="text/x-handlebars-template">
+<script id="entries-template" type="text/x-handlebars-template">
     {{#each entries}}
     <div class="box">
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-60x60">
-            <img src="{{icon}}" alt="No Image">
-          </figure>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>{{name}}</strong> <small>{{email}}</small>
-              <br> {{comment}}
-              
-            </p>
-          </div>
-        </div> 
-      </article> 
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-60x60">
+                    <img src="{{icon}}" alt="No Image">
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{name}}</strong> <small>{{email}}</small>
+                        <br> {{comment}}
+
+                    </p>
+                </div>
+            </div>
+        </article>
     </div>
     {{/each}}
-  </script> 
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="vaccination.js"></script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="vaccination.js"></script>
 </body>
 
 </html>
