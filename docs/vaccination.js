@@ -60,7 +60,6 @@ const vaccination = {
   // reload entries on success
   $(document).on('submit', 'form', function(e) {
     e.preventDefault();
-
     vaccination.add(
       $('#name').trim(),
       $('#email').trim(),
@@ -73,7 +72,7 @@ const vaccination = {
       console.log(error);
     });
   });
-  e.currentTarget.submit();
+
   $(document).ready(function() {
     prepareTemplates();
     loadEntries();
