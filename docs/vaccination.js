@@ -62,10 +62,10 @@ const vaccination = {
     e.preventDefault();
 
     vaccination.add(
-      $('#name').trim(),
-      $('#email').trim(),
-      $('#comment').trim(),
-      $('#vaccination_date').trim()
+      $('#name').val().trim(),
+      $('#email').val().trim(),
+      $('#comment').val().trim(),
+      $('#vaccination_date').val().trim()
     ).done(function(result) {
       // reload entries
       loadEntries();
