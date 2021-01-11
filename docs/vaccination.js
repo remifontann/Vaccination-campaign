@@ -58,8 +58,9 @@ const vaccination = {
 
   // intercept the click on the submit button, add the vaccination entry and
   // reload entries on success
-  $(document).on('submit', 'form', function(e) {
+  $(document).on('submit', '#addEntry', function(e) {
     e.preventDefault();
+
     vaccination.add(
       $('#name').trim(),
       $('#email').trim(),
