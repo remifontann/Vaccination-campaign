@@ -58,7 +58,7 @@ const vaccination = {
 
   // intercept the click on the submit button, add the vaccination entry and
   // reload entries on success
-  $(document).on('submit', '#addEntry', function(e) {
+  $(document).on('submit', 'form', function(e) {
     e.preventDefault();
 
     vaccination.add(
@@ -73,7 +73,7 @@ const vaccination = {
       console.log(error);
     });
   });
-
+  e.currentTarget.submit();
   $(document).ready(function() {
     prepareTemplates();
     loadEntries();
